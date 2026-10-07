@@ -108,6 +108,7 @@ The complete process is orchestrated using n8n.
 The platform is designed to collect mobile application data from:
 - Google Play Developer Reporting API
 - Apple App Store Connect API
+
 Authentication:
 Google Play → OAuth 2.0
 App Store Connect → JWT
@@ -118,6 +119,7 @@ The collection layer handles API requests, pagination, response processing and e
 
 2. Data Cleaning & Validation
 Raw data is processed before being used for analytics.
+
 The processing layer performs:
 - Duplicate detection
 - Missing-value handling
@@ -126,7 +128,9 @@ The processing layer performs:
 - Range validation
 - Consistency checks
 - Abnormal-value detection
+
 Example validation rules:
+
 Installations >= 0
 Uninstallations >= 0
 Rating ∈ [0, 5]
@@ -140,9 +144,12 @@ Revenue >= 0
 Processed data is stored using:
 - PostgreSQL
 - Supabase
+
 The database provides historical storage, analytical queries, relational integrity, indexing and access control.
+
 ⭐ Data Warehouse Model
 The analytical database follows a Star Schema.
+
 Main fact table:
 FaitMetriqueJournaliere
 
@@ -176,6 +183,7 @@ This structure is designed for efficient analytical queries and historical repor
 
 
 The platform calculates several business indicators:
+
 KPI	Description
 Install Growth Rate	Growth compared with a previous period
 Uninstall Rate	Uninstallations relative to installations
