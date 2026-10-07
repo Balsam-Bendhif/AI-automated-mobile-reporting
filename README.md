@@ -1,491 +1,279 @@
 # 🤖 AI-Powered Mobile Analytics Reporting Platform
 
-> An intelligent end-to-end platform for automating mobile application analytics, KPI computation, anomaly detection, AI-powered analysis and automated business reporting.
+> An intelligent end-to-end platform for automating mobile application analytics, KPI analysis, anomaly detection, AI-powered insights and automated business reporting.
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?logo=postgresql&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?logo=supabase&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-EA4B71?logo=n8n&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker&logoColor=white)
-![OpenAI](https://img.shields.io/badge/LLM-OpenAI-412991?logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/LLM-Claude-D97757)
+![n8n](https://img.shields.io/badge/n8n-Automation-EA4B71?logo=n8n&logoColor=white)
+![OpenAI](https://img.shields.io/badge/AI-OpenAI-412991?logo=openai&logoColor=white)
+![Claude](https://img.shields.io/badge/AI-Claude-D97757)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 
 ---
 
-# 📌 Overview
+## 📌 Overview
 
-**AI-Powered Mobile Analytics Reporting** is an intelligent platform designed to automate the complete lifecycle of mobile application analytics reporting.
+This project is an end-to-end platform designed to automate the mobile application analytics reporting process.
 
-The project combines:
+It combines **Data Engineering, Python, SQL, REST APIs, n8n, Generative AI and automated reporting** to transform raw application data into structured KPIs, analytical insights and business reports.
 
-- Data Engineering
-- Business Intelligence
-- Cloud Computing
-- Workflow Automation
-- Generative Artificial Intelligence
-- API Integration
-- Data Warehousing
-- Automated Reporting
-
-The objective is to transform raw mobile application data into structured KPIs, detect significant performance variations, generate contextual AI analysis and automatically distribute professional reports.
-
-The complete process can be summarized as:
+### Main Pipeline
 
 ```text
+Data Sources
+     ↓
 Data Collection
-      ↓
-Data Cleaning & Quality Control
-      ↓
-Data Storage
-      ↓
-KPI Computation
-      ↓
-Anomaly Detection
-      ↓
-Generative AI Analysis
-      ↓
-Report Generation
-      ↓
-Automated Distribution
-```
-
----
-
-# 🎯 Project Context
-
-Mobile application platforms generate large volumes of analytical data such as:
-
-- installations
-- uninstallations
-- ratings
-- reviews
-- revenue
-- crashes
-- impressions
-- application performance indicators
-
-However, this information is distributed across different platforms and often requires several manual operations before it can be transformed into a useful business report.
-
-Traditional reporting may involve:
-
-1. Extracting data from different platforms
-2. Consolidating datasets
-3. Cleaning and validating information
-4. Calculating KPIs
-5. Creating visualizations
-6. Identifying unusual variations
-7. Writing analytical comments
-8. Preparing presentations
-9. Writing summary emails
-10. Distributing the final reports
-
-This process can become repetitive, time-consuming and difficult to scale.
-
-The purpose of this project is therefore to automate the reporting value chain from data collection to final business deliverables.
-
----
-
-# ❓ Problem Statement
-
-The central problem addressed by this project is:
-
-> **How can the complete mobile application analytics reporting process be automated, from raw data collection to intelligent business deliverables, while maintaining data reliability, scalability and analytical relevance?**
-
----
-
-# 🎯 Objectives
-
-The main objective is to design and develop an intelligent platform capable of automating mobile application analytics reporting.
-
-The platform aims to:
-
-- Automatically collect mobile application data
-- Consolidate data from different platforms
-- Clean and validate incoming data
-- Store historical information
-- Calculate analytical KPIs
-- Detect unusual performance patterns
-- Generate contextual AI analysis
-- Produce actionable recommendations
-- Generate professional reports
-- Automate email summaries
-- Distribute reports through communication channels
-- Provide a modular and scalable architecture
-
----
-
-# 🏗️ Global Architecture
-
-The platform is organized into several functional layers:
-
-```text
-                         ┌─────────────────────────────┐
-                         │      MOBILE DATA SOURCES    │
-                         │                             │
-                         │ Google Play / App Store     │
-                         └──────────────┬──────────────┘
-                                        │
-                                        ▼
-                         ┌─────────────────────────────┐
-                         │      DATA COLLECTION        │
-                         │                             │
-                         │ REST APIs                   │
-                         │ OAuth 2.0 / JWT             │
-                         └──────────────┬──────────────┘
-                                        │
-                                        ▼
-                         ┌─────────────────────────────┐
-                         │   DATA CLEANING & QUALITY   │
-                         │                             │
-                         │ Python                      │
-                         │ Validation / Transformation │
-                         └──────────────┬──────────────┘
-                                        │
-                                        ▼
-                         ┌─────────────────────────────┐
-                         │    DATA STORAGE             │
-                         │                             │
-                         │ Supabase / PostgreSQL       │
-                         │ Star Schema                 │
-                         └──────────────┬──────────────┘
-                                        │
-                                        ▼
-                         ┌─────────────────────────────┐
-                         │       KPI ANALYSIS          │
-                         │                             │
-                         │ Daily / Weekly / Monthly    │
-                         └──────────────┬──────────────┘
-                                        │
-                                        ▼
-                         ┌─────────────────────────────┐
-                         │    ANOMALY DETECTION        │
-                         │                             │
-                         │ Historical comparison      │
-                         │ Severity classification     │
-                         └──────────────┬──────────────┘
-                                        │
-                                        ▼
-                         ┌─────────────────────────────┐
-                         │     GENERATIVE AI           │
-                         │                             │
-                         │ OpenAI / Claude             │
-                         │ Prompt Engineering          │
-                         └──────────────┬──────────────┘
-                                        │
-                         ┌──────────────┼──────────────┐
-                         │              │              │
-                         ▼              ▼              ▼
-                      ┌───────┐      ┌───────┐      ┌───────┐
-                      │ HTML  │      │ PPTX  │      │ Email │
-                      │ / PDF │      │       │      │       │
-                      └───┬───┘      └───┬───┘      └───┬───┘
-                          │              │              │
-                          └──────────────┼──────────────┘
-                                         ▼
-                              Automated Distribution
-```
-
-The complete workflow is orchestrated using **n8n**, which acts as the automation and integration layer.
-
----
-
-# 🔄 End-to-End Data Pipeline
-
-The complete data flow follows this architecture:
-
-```text
-External APIs
-      │
-      ▼
-Data Ingestion
-      │
-      ▼
-Data Cleaning
-      │
-      ▼
-Data Validation
-      │
-      ▼
+     ↓
+Data Cleaning & Validation
+     ↓
 PostgreSQL / Supabase
-      │
-      ▼
+     ↓
 KPI Calculation
-      │
-      ▼
+     ↓
 Anomaly Detection
-      │
-      ▼
-LLM Analysis
-      │
-      ▼
+     ↓
+OpenAI / Claude Analysis
+     ↓
 Report Generation
-      │
-      ├──────────────┬──────────────┐
-      ▼              ▼              ▼
-     PDF            PPTX          Email
-      │              │              │
-      └──────────────┴──────────────┘
-                     ▼
-             Automated Delivery
-```
+     ↓
+Email / Slack Distribution
 
----
 
-# 🌐 Data Collection
 
-The platform is designed around two major mobile application ecosystems:
 
-## Google Play
 
-The project uses the **Google Play Developer Reporting API** for retrieving application performance information.
+🎯 Objectives
+The platform aims to:
+- Automate mobile application data collection
+- Clean and validate incoming data
+- Store historical analytical data
+- Calculate business KPIs
+- Detect significant performance variations
+- Generate AI-powered insights
+- Produce actionable recommendations
+- Automatically generate reports
+- Distribute reports through Email and Slack
 
-Authentication is based on:
 
-```text
-OAuth 2.0
-```
 
-The collection layer is designed to handle:
+🏗️ Architecture
+                 ┌─────────────────────────┐
+                 │     DATA SOURCES        │
+                 │ Google Play / App Store │
+                 └────────────┬────────────┘
+                              ↓
+                 ┌─────────────────────────┐
+                 │     DATA COLLECTION     │
+                 │ REST APIs / OAuth / JWT │
+                 └────────────┬────────────┘
+                              ↓
+                 ┌─────────────────────────┐
+                 │ DATA CLEANING & QUALITY │
+                 │          Python         │
+                 └────────────┬────────────┘
+                              ↓
+                 ┌─────────────────────────┐
+                 │      DATA STORAGE       │
+                 │ PostgreSQL / Supabase   │
+                 └────────────┬────────────┘
+                              ↓
+                 ┌─────────────────────────┐
+                 │      KPI ANALYSIS       │
+                 └────────────┬────────────┘
+                              ↓
+                 ┌─────────────────────────┐
+                 │    ANOMALY DETECTION    │
+                 └────────────┬────────────┘
+                              ↓
+                 ┌─────────────────────────┐
+                 │      AI ANALYSIS        │
+                 │    OpenAI / Claude      │
+                 └────────────┬────────────┘
+                              ↓
+                ┌─────────────┼─────────────┐
+                ↓             ↓             ↓
+              Email          PDF           PPTX
+                ↓             ↓             ↓
+              Gmail          Slack         Slack
 
-- authentication
-- API requests
-- pagination
-- response parsing
-- network errors
-- retry mechanisms
-- rate limiting
+The complete process is orchestrated using n8n.
 
----
 
-## Apple App Store
 
-The platform also integrates the **App Store Connect API**.
+🔄 Workflow
 
-Authentication is based on:
 
-```text
-JWT
-```
+1. Data Collection
+The platform is designed to collect mobile application data from:
+- Google Play Developer Reporting API
+- Apple App Store Connect API
+Authentication:
+Google Play → OAuth 2.0
+App Store Connect → JWT
 
-The connector retrieves and processes the required mobile application metrics.
+The collection layer handles API requests, pagination, response processing and error management.
 
-The two connectors provide a common analytical layer despite the differences between the source platforms.
 
----
 
-# 🧹 Data Cleaning & Quality Control
-
-Raw data cannot be directly used for reliable analytics.
-
-The processing layer therefore performs several quality-control operations.
-
-Examples include:
-
-- duplicate detection
-- duplicate removal
-- date normalization
-- missing-value handling
-- type validation
-- range validation
-- consistency checks
-- abnormal-value flagging
-
-The objective is to make the dataset reliable before KPI computation.
-
-Example validation rules include:
-
-```text
+2. Data Cleaning & Validation
+Raw data is processed before being used for analytics.
+The processing layer performs:
+- Duplicate detection
+- Missing-value handling
+- Date normalization
+- Type validation
+- Range validation
+- Consistency checks
+- Abnormal-value detection
+Example validation rules:
 Installations >= 0
 Uninstallations >= 0
 Rating ∈ [0, 5]
 Crash Rate ∈ [0, 1]
 Revenue >= 0
-```
 
----
 
-# 🗄️ Data Storage
 
-The platform uses:
+3. Data Storage
 
-- **PostgreSQL**
-- **Supabase**
-
-Supabase provides the hosted backend environment while PostgreSQL provides the relational database engine.
-
-The database is responsible for:
-
-- persistent storage
-- historical data
-- analytical queries
-- relational integrity
-- indexing
-- access control
-
----
-
-# ⭐ Data Warehouse Model
-
-The analytical database uses a **Star Schema** adapted to Business Intelligence requirements.
-
-The main fact table is:
-
-```text
+Processed data is stored using:
+- PostgreSQL
+- Supabase
+The database provides historical storage, analytical queries, relational integrity, indexing and access control.
+⭐ Data Warehouse Model
+The analytical database follows a Star Schema.
+Main fact table:
 FaitMetriqueJournaliere
-```
 
-It is connected to several dimensions:
+Main dimensions:
+DimApplication
+DimPlateforme
+DimDate
+DimPays
 
-```text
-                 DimApplication
-                       │
-                       │
+
+
+
+Architecture:
+
+
+
+                  DimApplication
+                        │
+                        │
 DimPlateforme ── FaitMetriqueJournaliere ── DimDate
-                       │
-                       │
-                    DimPays
-```
+                        │
+                        │
+                     DimPays
 
-## Dimensions
+This structure is designed for efficient analytical queries and historical reporting.
 
-The main dimensions are:
 
-- `DimApplication`
-- `DimPlateforme`
-- `DimDate`
-- `DimPays`
 
-## Fact Table
 
-The main fact table stores daily quantitative metrics associated with:
+📊 KPI Analysis
 
-- applications
-- platforms
-- dates
-- countries
 
-This structure is optimized for analytical queries and aggregations.
+The platform calculates several business indicators:
+KPI	Description
+Install Growth Rate	Growth compared with a previous period
+Uninstall Rate	Uninstallations relative to installations
+Average Rating	Application rating evolution
+Crash Rate	Failed sessions relative to total sessions
+ARPU	Revenue per active user
 
----
 
-# 📊 KPI Computation
+These KPIs provide the structured analytical context used by the AI layer.
 
-The platform automatically calculates performance indicators at different time granularities.
 
-## Main KPIs
 
-| KPI | Description | Frequency |
-|---|---|---|
-| Install Growth Rate | Percentage change compared with a previous period | Weekly / Monthly |
-| Uninstall Rate | Uninstallations relative to installations | Daily |
-| Weighted Average Rating | Rating calculation with greater importance given to recent observations | Weekly |
-| Crash Rate | Failed sessions relative to total sessions | Daily |
-| ARPU | Revenue per active user | Monthly |
+🚨 Anomaly Detection
 
-The KPI layer transforms raw operational metrics into indicators that can be interpreted by business teams.
 
----
+The platform compares current observations with historical performance to identify significant variations.
+Examples include:
+- Sudden rating drops
+- Uninstall spikes
+- Crash-rate variations
+- Unexpected KPI changes
+- Significant performance changes
 
-# 🚨 Anomaly Detection
 
-The platform includes an anomaly detection layer designed to identify significant deviations in application performance.
+Historical Performance
+        ↓
+Current Performance
+        ↓
+Comparison
+        ↓
+Anomaly Detection
+        ↓
+Severity Classification
 
-The system compares current observations with historical behavior.
 
-Examples of anomalies include:
 
-- sudden rating drops
-- uninstall spikes
-- unusual crash-rate variations
-- significant performance changes
-- unexpected KPI movements
+The detected anomalies are then passed to the AI layer for contextual interpretation.
 
-Each detected anomaly can be associated with a severity level.
 
-Example:
 
-```text
-Normal
-   │
-   ├── Moderate variation
-   │
-   └── Critical variation
-```
-
-The anomaly detection results are then provided to the AI layer for contextual interpretation.
-
----
-
-# 🧠 Generative AI Layer
+🧠 Generative AI
 
 Generative AI is integrated after the deterministic data-processing and analytical stages.
-
-The architecture follows:
-
-```text
+The project supports OpenAI and Claude for AI-powered analysis.
 Raw Data
-    ↓
+   ↓
 Data Processing
-    ↓
+   ↓
 KPI Calculation
-    ↓
+   ↓
 Anomaly Detection
-    ↓
+   ↓
 Structured Analytical Context
-    ↓
-LLM
-    ↓
+   ↓
+OpenAI / Claude
+   ↓
 Business Interpretation
-    ↓
+   ↓
 Recommendations
-```
 
-The LLM is therefore not responsible for replacing the analytical calculations.
 
-Instead, it enriches the calculated results with:
+The AI layer generates:
 
-- natural-language interpretation
-- contextual analysis
-- explanations
-- recommendations
-- executive summaries
+- Natural-language interpretation
+- Business insights
+- Explanations
+- Executive summaries
+- Recommendations
 
----
+The LLM does not replace deterministic KPI calculations.
 
-# ✨ Prompt Engineering
 
-The AI layer uses structured prompts to control the generated output.
 
-The prompt can include:
 
-- reporting period
-- application information
-- platform
+✨ Prompt Engineering
+
+Structured prompts are used to control the generated analysis.
+The AI context can include:
+- Reporting period
+- Application
+- Platform
 - KPI values
-- previous-period comparisons
-- detected anomalies
-- severity
-- required output format
-- analytical instructions
+- Previous-period comparisons
+- Detected anomalies
+- Severity levels
+- Analytical instructions
+- Required output format
 
-The generated response is then integrated into the reporting layer.
+The objective is to produce consistent, relevant and actionable business analysis.
 
-The goal is to obtain:
 
-- consistent structure
-- relevant analysis
-- actionable recommendations
-- controlled numerical interpretation
 
----
+⚙️ n8n Workflow Automation
 
-# ⚙️ n8n Workflow Automation
+n8n acts as the central workflow orchestration engine.
+A typical workflow is:
 
-**n8n** acts as the central workflow orchestration engine.
 
-A typical workflow can be represented as:
-
-```text
 Schedule Trigger
        ↓
 Data Collection
@@ -498,488 +286,181 @@ KPI Calculation
        ↓
 Anomaly Detection
        ↓
-LLM Analysis
+AI Analysis
        ↓
 Report Generation
        ↓
 Distribution
-```
 
-The workflow can be scheduled automatically.
-
-For example:
-
-```text
-Every Monday
-      ↓
+Example scheduled execution:
+Monday 09:00
+     ↓
 Collect latest data
-      ↓
+     ↓
 Analyze performance
-      ↓
+     ↓
 Generate reports
-      ↓
+     ↓
 Send reports
-```
 
-This removes the need for manual execution of the reporting process.
+This eliminates repetitive manual reporting operations.
 
----
 
-# 📄 Automated Reporting
 
-The platform supports several types of outputs.
+🔀 Reporting Workflow
 
-## HTML Report
 
-The HTML report can contain:
+After the analytical stage, the workflow branches into multiple reporting outputs:
 
-- executive summary
+
+
+                 KPI + AI Analysis
+                        ↓
+              ┌─────────┼─────────┐
+              ↓         ↓         ↓
+            Email      PDF       PPTX
+              ↓         ↓         ↓
+            Gmail     Slack      Slack
+
+
+Each branch produces a different business deliverable.
+
+
+
+📄 Automated Reporting
+
+
+Email Report
+The automated email can contain:
+- Executive summary
+- Key KPIs
+- Main performance changes
+- Detected anomalies
+- Recommendations
+
+
+PDF Report
+The PDF provides a detailed analytical report suitable for management reporting, weekly reviews, sharing and archiving.
+
+
+PowerPoint Report
+The presentation can include:
 - KPI overview
-- platform comparison
-- performance evolution
-- detected anomalies
-- AI analysis
-- recommendations
-
----
-
-## PDF Report
-
-The HTML report can be converted into a PDF document suitable for:
-
-- management reporting
-- archiving
-- sharing
-- weekly performance reviews
-
----
-
-## PowerPoint Presentation
-
-The platform can also generate a presentation containing:
-
-- performance overview
-- KPI evolution
-- platform comparison
-- important anomalies
+- Performance evolution
+- Platform comparison
+- Important anomalies
 - AI insights
-- recommendations
+- Recommendations
 
-This format is designed for meetings and management presentations.
 
----
 
-## Email Summary
+🐳 Docker & Deployment
 
-An automated email provides a concise summary of the reporting period.
+Docker is used to provide a reproducible environment.
 
-The email can include:
 
-- key performance indicators
-- major changes
-- detected anomalies
-- main recommendations
-- links or attachments to reports
 
----
-
-# 📤 Multi-Channel Distribution
-
-The reporting outputs can be distributed through multiple channels.
-
-```text
-                         AI Analysis
-                              │
-             ┌────────────────┼────────────────┐
-             │                │                │
-             ▼                ▼                ▼
-           Email             PDF              PPTX
-             │                │                │
-             ▼                ▼                ▼
-          Gmail             Slack            Slack
-```
-
-This allows different users to receive the format most appropriate for their needs.
-
----
-
-# 🐳 Docker & Cloud
-
-Docker is used to provide a portable and reproducible application environment.
-
-The conceptual architecture is:
-
-```text
-Cloud Environment
-       │
-       ▼
 Docker Environment
-       │
-       ├── n8n
-       ├── Python Services
-       └── Application Components
-               │
-               ▼
-        External Services
-        ├── Mobile APIs
-        ├── Supabase
-        ├── LLM APIs
-        ├── Gmail
-        └── Slack
-```
+      │
+      ├── n8n
+      ├── Python
+      └── Application Components
+             │
+             ├── PostgreSQL / Supabase
+             ├── OpenAI / Claude
+             ├── APIs
+             ├── Gmail
+             └── Slack
 
 Docker provides:
 
-- environment isolation
-- reproducibility
-- portability
-- easier deployment
-- consistent execution environments
+- Reproducibility
+- Portability
+- Environment isolation
+- Easier deployment
 
----
 
-# 🔐 Security
+🧪 Testing
 
-Security is considered throughout the architecture.
+The project includes several testing levels.
 
-## Authentication
 
-Google Play:
+Unit Testing
+- Data cleaning
+- Validation
+- KPI calculations
+- Anomaly detection
 
-```text
-OAuth 2.0
-```
 
-App Store Connect:
 
-```text
-JWT
-```
+Integration Testing
 
-## Secret Management
-
-Production credentials must never be committed to GitHub.
-
-Examples include:
-
-```text
-OPENAI_API_KEY
-ANTHROPIC_API_KEY
-SUPABASE_KEY
-SLACK_BOT_TOKEN
-GOOGLE_CREDENTIALS
-APPLE_PRIVATE_KEY
-```
-
-A `.env.example` file can be provided:
-
-```env
-SUPABASE_URL=
-SUPABASE_KEY=
-
-OPENAI_API_KEY=
-ANTHROPIC_API_KEY=
-
-SLACK_BOT_TOKEN=
-
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-
-APPLE_KEY_ID=
-APPLE_ISSUER_ID=
-APPLE_PRIVATE_KEY=
-```
-
-The real `.env` file must remain local.
-
----
-
-# 🔒 Row Level Security
-
-Supabase/PostgreSQL can use **Row Level Security (RLS)** to restrict access to data according to the authenticated context.
-
-This provides an additional security layer for applications and users sharing the same analytical infrastructure.
-
----
-
-# 🧪 Testing Strategy
-
-The project uses several levels of testing.
-
-## Unit Testing
-
-Individual components are tested independently:
-
-- data cleaning
-- validation
-- KPI calculation
-- anomaly detection
-
-## Integration Testing
-
-Integration tests verify communication between:
-
-- APIs
-- Python services
-- PostgreSQL
-- Supabase
-- LLM services
-- reporting components
-- distribution services
-
-## End-to-End Testing
-
-The complete workflow is tested from:
-
-```text
-Data Collection
-      ↓
-Processing
-      ↓
-Analysis
-      ↓
-Report Generation
-      ↓
+APIs
+ ↓
+Python
+ ↓
+Database
+ ↓
+LLM
+ ↓
+Reporting
+ ↓
 Distribution
-```
 
-## Performance Testing
+End-to-End Testing
 
-The system is evaluated with different data volumes and application configurations.
----
-
-# 🚨 Anomaly Detection Validation
-
-Six controlled anomaly scenarios were evaluated.
-
-The tested cases included:
-
-- sudden rating drop
-- uninstall spike
-- gradual rating decline
-- another uninstall spike
-- small crash-rate variation
-- another sudden rating drop
-
----
-
-# 🛠️ Technology Stack
-
-| Category | Technologies |
-|---|---|
-| Programming | Python, SQL, JavaScript |
-| Data Engineering | ETL / ELT, Data Cleaning, Data Validation |
-| APIs | REST APIs |
-| Mobile Data | Google Play Developer Reporting API, App Store Connect API |
-| Authentication | OAuth 2.0, JWT |
-| Database | PostgreSQL |
-| Backend | Supabase |
-| Workflow Automation | n8n |
-| Artificial Intelligence | OpenAI GPT, Claude / Anthropic |
-| AI Techniques | LLMs, Prompt Engineering, Generative AI |
-| Reporting | HTML, CSS, PDF, PowerPoint |
-| Communication | Gmail API, Slack API |
-| Infrastructure | Docker, Cloud |
-| Version Control | Git, GitHub |
-| Data Modeling | Star Schema, UML, Business Intelligence |
-
----
-
-# 🔄 Example Weekly Workflow
-
-A typical weekly execution can follow this sequence:
-
-```text
-Monday Morning
-      │
-      ▼
-Collect Google Play Data
-      │
-      ▼
-Collect App Store Data
-      │
-      ▼
-Clean & Validate
-      │
-      ▼
-Store in PostgreSQL
-      │
-      ▼
-Calculate KPIs
-      │
-      ▼
-Compare with Previous Period
-      │
-      ▼
-Detect Anomalies
-      │
-      ▼
-Generate AI Analysis
-      │
-      ├───────────────┐
-      │               │
-      ▼               ▼
-Generate PDF      Generate PPTX
-      │               │
-      └───────┬───────┘
-              ▼
-        Email / Slack
-```
-
-The objective is to make the reporting cycle reproducible and automated.
-
----
-
-# 🌟 Key Features
-
-- ✅ Automated mobile data ingestion
-- ✅ Google Play integration
-- ✅ App Store integration
-- ✅ Data cleaning and validation
-- ✅ Historical data storage
-- ✅ PostgreSQL database
-- ✅ Supabase backend
-- ✅ Star Schema data model
-- ✅ KPI computation
-- ✅ Anomaly detection
-- ✅ Generative AI analysis
-- ✅ AI-powered recommendations
-- ✅ Prompt Engineering
-- ✅ Automated HTML reports
-- ✅ Automated PDF reports
-- ✅ Automated PowerPoint generation
-- ✅ Automated email summaries
-- ✅ Slack distribution
-- ✅ n8n workflow orchestration
-- ✅ Docker-based architecture
-- ✅ OAuth 2.0 authentication
-- ✅ JWT authentication
-- ✅ Row Level Security
+The complete workflow is tested from data collection to final report distribution.
 
 
----
-
-# 📚 Methodology
-
-The project follows a structured engineering methodology:
-
-```text
-1. Problem Identification
-        ↓
-2. Requirements Analysis
-        ↓
-3. Technology Study
-        ↓
-4. Architecture Design
-        ↓
-5. Data Modeling
-        ↓
-6. Pipeline Implementation
-        ↓
-7. AI Integration
-        ↓
-8. Workflow Automation
-        ↓
-9. Security Implementation
-        ↓
-10. Testing
-        ↓
-11. Validation
-        ↓
-12. Results Analysis
-```
-
-The project includes software design and Business Intelligence modeling approaches such as:
-
-- UML
-- Star Schema
-- data modeling
-- workflow modeling
-- API architecture
-- Cloud architecture
 
 
-## LLM Variability
+🛠️ Technology Stack
 
-Generative AI can produce variable outputs.
-
-Structured prompts, controlled inputs and validation mechanisms are therefore necessary.
-
-
-## Scalability
-
-For a very large portfolio of applications, additional engineering could be required around:
-
-- distributed processing
-- workload management
-- caching
-- partitioning
-- observability
-- cost optimization
-
-## Data Governance
-
-A production implementation would require additional governance around:
-
-- data retention
-- access control
-- audit logs
-- monitoring
-- privacy
-- credential rotation
+Category	Technologies
+Programming	Python, SQL, JavaScript
+Data Engineering	ETL / ELT, Data Cleaning, Validation
+Database	PostgreSQL, Supabase
+APIs	REST APIs
+Mobile Data	Google Play API, App Store Connect API
+Authentication	OAuth 2.0, JWT
+Workflow Automation	n8n
+AI / LLM	OpenAI, Claude
+AI Techniques	Generative AI, Prompt Engineering
+Reporting	HTML, PDF, PowerPoint
+Communication	Gmail, Slack
+Infrastructure	Docker
+Version Control	Git, GitHub
+Data Modeling	Star Schema
 
 
-# 🧪 Portfolio Demonstration
+🔐 Security & Confidentiality
 
-The public version can reproduce the complete architecture using synthetic or public-safe data:
+Production credentials and confidential business information are not included in this repository.
+Sensitive information such as API keys, database credentials, OAuth credentials and private tokens is managed through environment variables.
+The public repository uses safe or synthetic data where necessary.
 
-```text
-Sample Mobile Data
-        ↓
-Python Ingestion
-        ↓
-Data Cleaning
-        ↓
-Supabase / PostgreSQL
-        ↓
-KPI Calculation
-        ↓
-Anomaly Detection
-        ↓
-LLM Analysis
-        ↓
-Report Generation
-        ↓
-PDF / PPTX / Email
-        ↓
-Slack
-```
+🎥 Project Demo
 
-This allows the technical concepts to be demonstrated without exposing confidential information.
+A complete walkthrough of the platform, from data processing to AI-powered reporting and automated delivery.
 
----
+▶️ Watch the full project demonstration on Google Drive : https://drive.google.com/file/d/1Q7D4F8_HbPHpTn_0DcP0JD5nAe6vQ61b/view?usp=drive_link
 
-# 🎓 Academic Project
 
-This project was developed as part of a Master's final-year project.
 
-### Project Title
 
-> **Conception et développement d'une plateforme intelligente d'automatisation du reporting analytique des applications mobiles**
+🎓 Academic Project
+Master's Final-Year Project
+Project Title
+Conception et développement d'une plateforme intelligente d'automatisation du reporting analytique des applications mobiles
 
 The project combines:
-
 - Data Engineering
 - Business Intelligence
-- Cloud Computing
 - Generative AI
 - Workflow Automation
 - API Integration
 - Data Warehousing
 - Automated Reporting
-
----
-
-# 👩‍💻 Author
-
-## Balsam Bendhif
+👩‍💻 Author
+Balsam Bendhif
+Data Analyst | Data & AI | Automation
